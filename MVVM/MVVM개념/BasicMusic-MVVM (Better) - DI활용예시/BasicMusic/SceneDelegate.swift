@@ -20,15 +20,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         // 네트워킹 객체 생성
-        let apiService = APIService()
+        // - 1. apiService를 외부에서 만들고
+        let apiService = APIService() // + 의존성 주입이 필요한 이유 TestService로 바꿔치기를 할 수가 있음
+                                        // 나중에 테스트 코드 같은것을 용이하게 작성 할 수 있음
         
         // 의존성 주입방식으로 네트워킹 객체 전달 ⭐️⭐️⭐️ (뷰모델 생성)
+        // - 2. ViewModel을 만들때 외부에서 만든 것을 주입 (의존성 주입)
         let musicVM = MusicViewModel(apiManager: apiService)
 
         
         let firstVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         
         // 뷰모델 전달
+        // - 3. 위에서 만든 ViewModel을 첫번째 화면 View 즉 ViewModel을 가지는 View에 전달을 하는 것임
         firstVC.viewModel = musicVM
         
         
