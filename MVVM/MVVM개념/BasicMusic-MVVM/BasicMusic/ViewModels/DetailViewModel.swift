@@ -12,9 +12,9 @@ class DetailViewModel {
     
     var music: Music?
     
-    var imageURL: String? {
+    var imageURL: String? { // 이것도 모델로 봐도 됨 
         didSet {
-            loadImage()
+            loadImage() // 이전화면에서 데이터 받으면 네트워킹 시작
         }
     }
     

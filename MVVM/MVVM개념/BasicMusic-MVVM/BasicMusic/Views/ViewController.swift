@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     
-    var viewModel: MusicViewModel!
+    var viewModel: MusicViewModel! // 뷰컨트롤러는 뷰모델을 가짐
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +47,14 @@ class ViewController: UIViewController {
         let detailVM = DetailViewModel()
         
         //뷰모델이 가져야 하는 데이터 ⭐️
+            // - 내가가진 뷰 모델에서 전달하면됨 (당장 표시해줘야 하니 미리 전달 후 아래 에서 뷰 모델 자체를 전달)
+            // - 이렇게 하는건 복잡함 
         detailVM.music = viewModel.music
         detailVM.imageURL = viewModel.music?.imageUrl
         
         
         // 일반적으로 ====================================
-        //let detailVM = viewModel.getDetailViewModel()
+        //let detailVM = viewModel.getDetailViewModel() // 애만 호출하면 다음 화면 뷰 모델 바로 전달 될것임
         
         //다음 화면 뷰컨트롤러 ⭐️
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController

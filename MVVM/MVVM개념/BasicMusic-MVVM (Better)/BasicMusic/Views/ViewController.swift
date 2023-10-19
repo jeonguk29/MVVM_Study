@@ -15,6 +15,14 @@ class ViewController: UIViewController {
     
     var viewModel: MusicViewModel!
     
+    // var apiService = APIService()
+    /*
+     뷰 컨 안에다가 APIService() 같이 네트워킹 로직을 넣을 수 있음
+     뷰컨이 API 서비스를 가지는 것임 이럴때 문제점은 API 서비스를 호출해가지고 데이터가 생기면
+     데이터를 받았을떄 다시 해당 데이터를 뷰 모델한테 전달 해줘야함 , 데이터의 소유권은 일단 뷰 모델이 가지니까 그래서 이게 불편하기 때문에 API 서비스를 뷰 컨 안에다가 넣지 않고
+     뷰 모델이 가지도록 합니다.
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = MusicViewModel()

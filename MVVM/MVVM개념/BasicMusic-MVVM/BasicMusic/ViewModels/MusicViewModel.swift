@@ -93,12 +93,12 @@ class MusicViewModel {
     
     
 //    func getDetailViewModel() -> DetailViewModel {
-//        let detailVM = DetailViewModel()
+//        let detailVM = DetailViewModel() // 다음화면 생성후
 //
-//        detailVM.music = self.music
+//        detailVM.music = self.music       // 데이터를 전달하고
 //        detailVM.imageURL = self.music?.imageUrl
 //
-//        return detailVM
+//        return detailVM // 다음 화면 리턴 
 //    }
 
 }

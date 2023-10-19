@@ -10,7 +10,7 @@ import Foundation
 class MusicViewModel {
     
     // 일부러 싱글톤으로 안 만듦
-    let apiManager = APIService()
+    let apiManager = APIService() // 뷰 모델이 네트워킹 로직 가질 수 있도록 만듬
     
     // 핵심 데이터(모델) ⭐️⭐️⭐️ (뷰모델이 가지고 있음)
     var music: Music? {

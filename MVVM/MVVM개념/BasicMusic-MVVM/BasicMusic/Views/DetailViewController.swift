@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     }
     
     func configureUI() {
+        // 시점을 전달 받음 
         viewModel.onCompleted = { [weak self] albumImage in
             self?.albumImageView.image = albumImage
         }

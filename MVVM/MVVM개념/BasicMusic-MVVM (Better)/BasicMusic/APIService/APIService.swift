@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 // 일부러 싱글톤으로 안 만듦
+// - 네트워킹 코드를 분리
+// - 당연히 이 네트워킹 관련 로직은 뷰 모델에서 일어남 
 class APIService {
     func fetchMusic(completion: @escaping (Result<[Music], NetworkError>) -> Void) {
         let urlString = "https://itunes.apple.com/search?media=music&term=jazz"
